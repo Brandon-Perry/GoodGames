@@ -33,15 +33,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     name: {
       type: DataTypes.STRING(255),
-      allowNull: false,
     },
     genre: {
       type: DataTypes.STRING(50),
-      allowNull: false
     },
     publisher: {
       type: DataTypes.STRING(50),
-      allowNull: false
     },
     release_date: DataTypes.DATEONLY
   }, {

@@ -11,6 +11,7 @@ module.exports = {
       steam_id: {
         type: Sequelize.INTEGER,
         unique: true,
+        allowNull: false
       },
       name: {
         type: Sequelize.STRING(255),
@@ -18,11 +19,9 @@ module.exports = {
       },
       genre: {
         type: Sequelize.STRING(50),
-        allowNull: false
       },
       publisher: {
         type: Sequelize.STRING(50),
-        allowNull: false
       },
       release_date: {
         type: Sequelize.DATEONLY
