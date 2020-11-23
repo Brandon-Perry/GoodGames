@@ -3,24 +3,52 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class user_game extends Model {
+  class User_Game extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+
+
+      User_Game.hasMany(models.Library_Game, {foreignKey: 'game_id'});
+
+      const columnMapping = {
+        through: 'Library_Game',
+        otherKey: 'library_id',
+        foreignKey: 'game_id'
+      }
+
+      User_Game.belongsToMany(models.Library, columnMapping)
+
+
     }
   };
-  user_game.init({
-    user_id: DataTypes.INTEGER,
-    game_id: DataTypes.INTEGER,
-    played: DataTypes.BOOLEAN,
-    playing: DataTypes.BOOLEAN
+  User_Game.init({
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    game_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    played: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    playing: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    wantToPlay: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    }
   }, {
     sequelize,
-    modelName: 'user_game',
+    modelName: 'User_Game',
   });
-  return user_game;
+  return User_Game;
 };

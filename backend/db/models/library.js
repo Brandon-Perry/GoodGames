@@ -3,22 +3,35 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class library extends Model {
+  class Library extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+
+      const columnMapping = {
+        through: 'Library_Game',
+        otherKey: 'game_id',
+        foreignKey: 'library_id'
+      }
+
+      Library.belongsTo(models.User, {foreignKey: 'user_id'})
     }
   };
-  library.init({
-    name: DataTypes.STRING,
-    user_id: DataTypes.INTEGER
+  Library.init({
+    name: {
+      type: DataTypes.STRING(50),
+      allowNull: false
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   }, {
     sequelize,
-    modelName: 'library',
+    modelName: 'Library',
   });
-  return library;
+  return Library;
 };

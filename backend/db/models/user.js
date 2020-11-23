@@ -38,13 +38,33 @@ module.exports = (sequelize, DataTypes) => {
       return await User.scope('currentUser').findByPk(user.id);
     };
     static associate(models) {
-      // define association here
+
+      const columnMappingGames = {
+        through: 'User_Game',
+        otherKey: 'game_id',
+        foreignKey: 'user_id'
+      }
+
+      const columnMappingReviews = {
+        through: 'Review',
+        otherKey: 'game_id',
+        foreignKey: 'user_id'
+      }
+
+      User.hasMany(models.Friend, {foreignKey: 'user_id'});
+      User.hasMany(models.Friend, {foreignKey: 'friend_id'});
+
+      User.belongsToMany(models.Game, columnMappingGames);
+
+      User.hasMany(models.Library, {foreignKey: 'user_id'});
+
+      User.belongsToMany(models.Review, columnMappingReviews)
     }
   };
   User.init(
     {
-      username: {
-        type: DataTypes.STRING,
+      user_name: {
+        type: DataTypes.STRING(50),
         allowNull: false,
         validate: {
           len: [4, 30],
@@ -56,7 +76,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       email: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(100),
         allowNull: false,
         validate: {
           len: [3, 256],
@@ -69,6 +89,10 @@ module.exports = (sequelize, DataTypes) => {
           len: [60, 60],
         },
       },
+      steam_id: {
+        type: DataTypes.INTEGER,
+        unique: true,
+      }
     },
     {
       sequelize,

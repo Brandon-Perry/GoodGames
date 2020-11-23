@@ -13,10 +13,10 @@ module.exports = {
         allowNull: false,
         references: {model:'Users', key:'id'},
       },
-      all_users_id: {
+      friend_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {model:'All_Users', key:'id'}
+        references: {model:'Users', key:'id'}
       },
       createdAt: {
         allowNull: false,
