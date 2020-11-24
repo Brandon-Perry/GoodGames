@@ -1,0 +1,13 @@
+
+
+.splash_greeting__header {
+    color: whitesmoke;
+    font-size: 50px;
+}
+
+.splash_greeting__div {
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}

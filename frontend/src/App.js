@@ -5,6 +5,7 @@ import LoginFormPage from './components/LoginFormPage/index'
 import SignUpFormPage from './components/SignUpFormPage/index';
 import * as sessionActions from './store/session'
 import Navigation from "./components/Navigation";
+import SplashPage from './components/SplashPage/index';
 
 
 function App() {
@@ -17,13 +18,21 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
+
       <Switch>
+
+        <Route exact path='/'>
+          <SplashPage />
+        </Route>
+
         <Route path='/login'>
           <LoginFormPage />
         </Route>
+
         <Route path='/signup'>
           <SignUpFormPage />
         </Route>
+
       </Switch>
     </>
   );
