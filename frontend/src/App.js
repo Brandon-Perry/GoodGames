@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {Route, Switch} from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage/index'
 import SignUpFormPage from './components/SignUpFormPage/index';
 import * as sessionActions from './store/session'
 import Navigation from "./components/Navigation";
 import SplashPage from './components/SplashPage/index';
+import AppPage from './components/AppPage/index'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   useEffect(()=> {
     dispatch(sessionActions.restoreUser()).then(()=> setIsLoaded(true))
   }, [dispatch]);
+  const sessionUser = useSelector(state => state.session.user);
 
   return (
     <>
@@ -22,7 +24,7 @@ function App() {
       <Switch>
 
         <Route exact path='/'>
-          <SplashPage />
+          {sessionUser ? <AppPage /> : <SplashPage />} 
         </Route>
 
         <Route path='/login'>
@@ -32,6 +34,7 @@ function App() {
         <Route path='/signup'>
           <SignUpFormPage />
         </Route>
+         
 
       </Switch>
     </>

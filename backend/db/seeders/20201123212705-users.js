@@ -17,7 +17,7 @@ module.exports = {
       const userDataJson = await userDataRes.json()
       let userData = userDataJson.response.players[0]
       let entry = {
-        user_name:userData.personaname, 
+        username:userData.personaname, 
         email: faker.internet.email(),
         hashedPassword: bycrypt.hashSync('password'),
         steam_id: userData.steamid,

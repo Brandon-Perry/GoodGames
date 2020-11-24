@@ -1,0 +1,28 @@
+.app_home__container {
+    height: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid green;
+    margin-left: 15%;
+    margin-right: 15%;
+
+}
+
+.app_current-want__container {
+    border: 1px solid blue;
+    
+}
+
+.app_feed__container {
+    border: 1px solid red;
+}
+
+.app_library__container {
+    border: 1px solid purple
+}
+
+.app_feed__container, .app_library__container, .app_current-want__container {
+    display: flex;
+    flex: 1;
+}
