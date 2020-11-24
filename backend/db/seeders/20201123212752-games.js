@@ -9,7 +9,7 @@ module.exports = {
 
     const apps = resJson.applist.apps 
 
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 20; i++) {
         
       await queryInterface.bulkInsert('Games', [
        {

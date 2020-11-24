@@ -22,8 +22,8 @@ module.exports = {
         type: Sequelize.STRING.BINARY,
         allowNull: false,
       },
-      steamId: {
-        type: Sequelize.INTEGER,
+      steam_id: {
+        type: Sequelize.BIGINT,
         unique: true
       },
       createdAt: {
