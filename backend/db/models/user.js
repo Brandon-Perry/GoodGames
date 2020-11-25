@@ -45,11 +45,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'user_id'
       }
 
-      const columnMappingReviews = {
-        through: 'Review',
-        otherKey: 'game_id',
-        foreignKey: 'user_id'
-      }
+      // const columnMappingReviews = {
+      //   through: 'Review',
+      //   otherKey: 'game_id',
+      //   foreignKey: 'user_id'
+      // }
 
       User.hasMany(models.Friend, {foreignKey: 'user_id'});
       User.hasMany(models.Friend, {foreignKey: 'friend_id'});
@@ -58,7 +58,7 @@ module.exports = (sequelize, DataTypes) => {
 
       User.hasMany(models.Library, {foreignKey: 'user_id'});
 
-      User.belongsToMany(models.Review, columnMappingReviews)
+      // User.belongsToMany(models.Review, columnMappingReviews)
     }
   };
   User.init(

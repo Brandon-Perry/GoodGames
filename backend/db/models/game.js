@@ -12,18 +12,20 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       const columnMappingUsers = {
         through: 'User_Game',
+        as: 'user_games',
         otherKey: 'user_id',
         foreignKey: 'game_id'
       }
 
-      const columnMappingReviews = {
-        through: 'Review',
-        otherKey: 'user_id',
-        foreignKey: 'game_id'
-      }
+      // const columnMappingReviews = {
+      //   through: 'Review',
+      //   as: 'reviews',
+      //   otherKey: 'user_id',
+      //   foreignKey: 'game_id'
+      // }
 
       Game.belongsToMany(models.User, columnMappingUsers);
-      Game.belongsToMany(models.User, columnMappingReviews)
+      // Game.belongsToMany(models.User, columnMappingReviews)
     }
   };
   Game.init({

@@ -25,4 +25,6 @@
 .app_feed__container, .app_library__container, .app_current-want__container {
     display: flex;
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }

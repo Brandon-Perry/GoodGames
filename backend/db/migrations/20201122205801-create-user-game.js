@@ -33,6 +33,10 @@ module.exports = {
         allowNull: false,
         defaultValue: false
       },
+      review: {
+        type: Sequelize.TEXT,
+        defaultValue: ''
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

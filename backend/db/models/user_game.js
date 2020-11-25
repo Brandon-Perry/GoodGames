@@ -45,6 +45,9 @@ module.exports = (sequelize, DataTypes) => {
     wantToPlay: {
       type: DataTypes.BOOLEAN,
       allowNull: false
+    },
+    review: {
+      type: DataTypes.TEXT,
     }
   }, {
     sequelize,
