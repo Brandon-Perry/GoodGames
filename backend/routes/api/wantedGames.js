@@ -10,7 +10,7 @@ const {User} = require('../../db/models')
 
 const router = express.Router();
 
-router.get('/user/:id', asyncHandler(async (req,res) => {
+router.get('/:id/wantedGames', asyncHandler(async (req,res) => {
     const {id} = req.params
 
     const wantedGames = await Game.findAll({

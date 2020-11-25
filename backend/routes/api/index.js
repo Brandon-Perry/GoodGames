@@ -46,6 +46,6 @@ router.use("/session", sessionRouter);
 
 router.use("/users", usersRouter);
 
-router.use('/wantedGames',wantedGamesRouter)
+router.use('/users',wantedGamesRouter)
 
 module.exports = router;
