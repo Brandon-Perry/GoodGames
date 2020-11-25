@@ -7,12 +7,15 @@ const AppPageWantToPlay = () => {
     const [wantedGames, setWantedGames] = useState([])
     useEffect(() => {
         const loadWantedGames = async() => {
-            const res = await fetch(`/api/users/${userId}/wantedGames`);
-            res.data = res.json();
+            const res = await fetch(`/api/users/${userId}/wantToPlay`);
+            const data = await res.json();
             if (res.ok) {
-                setWantedGames(res.data)
+                setWantedGames(data)
             }
+            console.log('triggered')
+            console.log(data)
         }
+        loadWantedGames()
     },[])
     return (
         <h2>Want To Play</h2>

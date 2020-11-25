@@ -10,16 +10,16 @@ const {User} = require('../../db/models')
 
 const router = express.Router();
 
-router.get('/:id/wantedGames', asyncHandler(async (req,res) => {
+router.get('/:id/played', asyncHandler(async (req,res) => {
     const {id} = req.params
 
-    const wantedGames = await Game.findAll({
+    const playedGames = await Game.findAll({
         include: [{
             model: User, 
             as: 'user_games',
             through: {
                 where: {
-                    wantToPlay: true
+                    played: true
                 }
             },
             where: {
@@ -29,7 +29,7 @@ router.get('/:id/wantedGames', asyncHandler(async (req,res) => {
         
     })
 
-    return res.json({wantedGames}) 
+    return res.json({playedGames}) 
 
 }))
 

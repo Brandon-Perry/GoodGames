@@ -1,7 +1,10 @@
 const router = require("express").Router();
 const sessionRouter = require("./session.js");
 const usersRouter = require("./users.js");
-const wantedGamesRouter = require('./wantedGames.js')
+const wantedGamesRouter = require('./wantToPlay.js');
+const librariesRouter = require('./libraries.js');
+const playedRouter = require('./played.js')
+const playingRouter = require('./playing')
 
 
 // // GET /api/set-token-cookie
@@ -46,6 +49,12 @@ router.use("/session", sessionRouter);
 
 router.use("/users", usersRouter);
 
-router.use('/users',wantedGamesRouter)
+router.use('/users',wantedGamesRouter);
+
+router.use('/users',playedRouter);
+
+router.use('/users',playingRouter);
+
+router.use('/users', librariesRouter)
 
 module.exports = router;
