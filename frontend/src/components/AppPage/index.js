@@ -6,7 +6,8 @@ import './AppPage.css';
 import AppPageCurrentlyPlaying from './AppPageCurrentlyPlaying/index';
 import AppPageWantToPlay from './AppPageWantToPlay/index';
 import AppPageFeed from './AppPageFeed/index';
-import AppPageLibrary from './AppPageLibrary/index'
+import LibraryList from '../Library/LibraryList'
+import Library from '../Library';
 
 
 const AppPage = () => {
@@ -26,7 +27,7 @@ const AppPage = () => {
             </div>
 
             <div className='app_library__container'>
-                <AppPageLibrary />
+                <LibraryList />
             </div>
 
 

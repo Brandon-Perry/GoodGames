@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import LibraryItems from './LibraryItems'
 
-const AppPageLibrary = () => {
+const LibraryList = () => {
 
     const userId = useSelector(state => state.session.user.id);
     const [libraries, setLibraries] = useState([])
@@ -30,4 +30,4 @@ const AppPageLibrary = () => {
     )
 }
 
-export default AppPageLibrary;
+export default LibraryList;

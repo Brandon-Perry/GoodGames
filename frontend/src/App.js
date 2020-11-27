@@ -6,7 +6,8 @@ import SignUpFormPage from './components/SignUpFormPage/index';
 import * as sessionActions from './store/session'
 import Navigation from "./components/Navigation";
 import SplashPage from './components/SplashPage/index';
-import AppPage from './components/AppPage/index'
+import AppPage from './components/AppPage/index';
+import Library from './components/Library/index'
 
 
 function App() {
@@ -23,8 +24,9 @@ function App() {
 
       <Switch>
 
-        <Route exact path='/'>
-          {sessionUser ? <AppPage /> : <SplashPage />} 
+
+        <Route path='/library'>
+          <Library />
         </Route>
 
         <Route path='/login'>
@@ -35,6 +37,9 @@ function App() {
           <SignUpFormPage />
         </Route>
          
+        <Route exact path='/'>
+          {sessionUser ? <AppPage /> : <SplashPage />} 
+        </Route>
 
       </Switch>
     </>
