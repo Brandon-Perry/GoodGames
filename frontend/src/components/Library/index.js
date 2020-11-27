@@ -1,7 +1,9 @@
 import React from 'react';
 import LibraryList from './LibraryList'
 import GameDisplay from './GameDisplay'
-import '../AppPage/AppPage.css'
+import '../AppPage/AppPage.css';
+
+
 
 const Library = () => {
 

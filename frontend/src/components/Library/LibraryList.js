@@ -6,17 +6,19 @@ import LibraryItems from './LibraryItems'
 const LibraryList = () => {
 
     const userId = useSelector(state => state.session.user.id);
-    const [libraries, setLibraries] = useState([])
-    useEffect(()=> {
-        (async()=> {
-            const res = await fetch(`/api/users/${userId}/libraries`);
-            const data = await res.json();
-            console.log(data.allLibraries)
-            if (res.ok) {
-                setLibraries(data.allLibraries)
-            }
-        })()
-    }, [])
+    // const [libraries, setLibraries] = useState([])
+    // useEffect(()=> {
+    //     (async()=> {
+    //         const res = await fetch(`/api/users/${userId}/libraries`);
+    //         const data = await res.json();
+    //         console.log(data.allLibraries)
+    //         if (res.ok) {
+    //             // setLibraries(data.allLibraries)
+    //         }
+    //     })()
+    // }, [])
+
+    const libraries = useSelector(state => state.library.libraries)
 
     return (
         <>
