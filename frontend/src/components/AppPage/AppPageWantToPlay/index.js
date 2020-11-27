@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import PlayItems from '../PlayItems'
+import './AppPageWantToPlay.css'
+import WantToPlayItems from './WantToPlayItems'
+
 
 const AppPageWantToPlay = () => {
     const userId = useSelector(state => state.session.user.id);
@@ -20,11 +22,13 @@ const AppPageWantToPlay = () => {
     return (
         <>
             <h2>Want To Play</h2>
-            {
-                wantedGames ? wantedGames.map(game => (
-                    <PlayItems game={game} />
-                )) : <p>Loading...</p>
-            }
+            <div className='WantToPlay__container'>
+                {
+                    wantedGames ? wantedGames.map(game => (
+                        <WantToPlayItems game={game} />
+                    )) : <p>Loading...</p>
+                }
+            </div>
         </>
     )
 }

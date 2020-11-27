@@ -1,0 +1,16 @@
+.WantToPlay__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.WantToPlay__img {
+    height: auto;
+    max-width: 100px;
+    border: 1px solid black
+}
+
+h2 {
+    font-weight: bold;
+    color: whitesmoke
+}
