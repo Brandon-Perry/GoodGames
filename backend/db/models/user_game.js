@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 
       const columnMapping = {
         through: 'Library_Game',
+        // as:'game_library_search',
         otherKey: 'library_id',
         foreignKey: 'game_id'
       }

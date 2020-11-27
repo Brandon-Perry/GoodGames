@@ -13,11 +13,13 @@ module.exports = (sequelize, DataTypes) => {
 
       const columnMapping = {
         through: 'Library_Game',
+        as: 'library_game',
         otherKey: 'game_id',
         foreignKey: 'library_id'
       }
 
       Library.belongsTo(models.User, {foreignKey: 'user_id'})
+      Library.belongsToMany(models.User_Game, columnMapping)
     }
   };
   Library.init({

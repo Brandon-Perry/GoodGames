@@ -1,20 +1,34 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import CurrentlyPlayingItems from './CurrentlyPlayingItems'
+import PlayItems from '../PlayItems'
 
 
 
 const AppPageCurrentlyPlaying = () => {
-   const userId = useSelector(state => state.session.user.id);
+    const userId = useSelector(state => state.session.user.id);
+    const [playingGames, setPlayingGames] = useState([])
     useEffect(() => {
-        
-    })
+        (async() => {
+            const res = await fetch(`/api/users/${userId}/playing`);
+            const data = await res.json();
+            // console.log(data)
+            // console.log(data.playing)
+            if (res.ok) {
+                setPlayingGames(data.playing)
+            }
+            
+        })()
+    },[])
     return (
-        <div className='AppPageCurrentlyPlaying__container'>
-            <h2>Currently Playing</h2>
-            <CurrentlyPlayingItems />
-        </div>
+        <>
+            <h2>Playing</h2>
+            {
+                playingGames ? playingGames.map(game => (
+                    <PlayItems game={game} />
+                )) : <p>Loading...</p>
+            }
+        </>
     )
 }
 

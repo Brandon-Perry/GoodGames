@@ -6,31 +6,25 @@ module.exports = {
      await queryInterface.bulkInsert('Library_Games', [
       {
         library_id: 1,
-        game_id: 5,
+        game_id: 1,
         updatedAt: new Date(),
         createdAt: new Date()
       },
       {
         library_id: 1,
-        game_id: 10,
+        game_id: 2,
         updatedAt: new Date(),
         createdAt: new Date()
       },
       {
         library_id: 2,
-        game_id: 20,
+        game_id: 3,
         updatedAt: new Date(),
         createdAt: new Date()
       },
       {
         library_id: 2,
-        game_id: 17,
-        updatedAt: new Date(),
-        createdAt: new Date()
-      },
-      {
-        library_id: 3,
-        game_id: 20,
+        game_id: 4,
         updatedAt: new Date(),
         createdAt: new Date()
       },
@@ -40,6 +34,7 @@ module.exports = {
         updatedAt: new Date(),
         createdAt: new Date()
       },
+    
 
      ], {});
     
