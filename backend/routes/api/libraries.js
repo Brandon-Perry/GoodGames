@@ -62,8 +62,7 @@ router.get('/:id/library_games/:library_id', asyncHandler(async (req,res) => {
             id: {[Op.in]: game_ids}
         }
     })
-
-    
+  
 
 
     return res.json({user_games, game_info})

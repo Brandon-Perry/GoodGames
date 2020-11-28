@@ -18,7 +18,7 @@ const AppPage = () => {
  
     useEffect(()=> {
         dispatch(libraryActions.grabAllLibraries(userId))
-    })
+    },[])
     
 
     return (

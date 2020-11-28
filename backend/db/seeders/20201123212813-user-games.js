@@ -35,8 +35,8 @@ module.exports = {
         createdAt: new Date()
       },
       {
-        user_id: 2,
-        game_id: 20,
+        user_id: 1,
+        game_id: 15,
         played: true,
         playing: true,
         wantToPlay: false,
@@ -45,8 +45,8 @@ module.exports = {
         createdAt: new Date()
       },
       {
-        user_id: 2,
-        game_id: 5,
+        user_id: 1,
+        game_id: 17,
         played: false,
         playing: true,
         wantToPlay: false,

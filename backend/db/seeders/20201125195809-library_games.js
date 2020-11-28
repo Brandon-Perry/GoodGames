@@ -29,7 +29,7 @@ module.exports = {
         createdAt: new Date()
       },
       {
-        library_id: 3,
+        library_id: 1,
         game_id: 5,
         updatedAt: new Date(),
         createdAt: new Date()
