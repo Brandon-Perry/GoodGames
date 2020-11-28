@@ -24,19 +24,19 @@ const AppPage = () => {
     return (
         <div className='app_home__container'>
 
-            <div className='app_current-want__container'>
-                <AppPageCurrentlyPlaying />
-                <AppPageWantToPlay />
+            <div className='app_library__container'>
+                <LibraryList />
             </div>
 
             <div className='app_feed__container'>
                 <AppPageFeed />
             </div>
 
-            <div className='app_library__container'>
-                <LibraryList />
-            </div>
 
+            <div className='app_current-want__container'>
+                <AppPageCurrentlyPlaying />
+                <AppPageWantToPlay />
+            </div>
 
         </div>
     )

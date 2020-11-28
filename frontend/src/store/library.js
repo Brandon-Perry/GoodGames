@@ -25,10 +25,12 @@ export const loadSelectedLibrary = (libraryId, userId) => async(dispatch) => {
     // console.log(data)
     let newData = []
     
-    data.user_games.forEach((el,i) => {
-        let newObj = {...data.user_games[i], ...data.game_info[i]}
-        newData.push(newObj)
-    })
+    if (data.user_games) {
+        data.user_games.forEach((el,i) => {
+            let newObj = {...data.user_games[i], ...data.game_info[i]}
+            newData.push(newObj)
+        })
+    }
     // console.log(newData)
 
         

@@ -14,7 +14,7 @@
 
 .app_current-want__container {
     border: 1px solid blue;
-    grid-column: 1;
+    grid-column: 3;
 }
 
 .app_feed__container {
@@ -24,7 +24,7 @@
 
 .app_library__container {
     border: 1px solid purple;
-    grid-column: 3;
+    grid-column: 1;
 }
 
 .app_feed__container, .app_library__container, .app_current-want__container {
@@ -34,11 +34,69 @@
     flex-direction: column;
 }
 
-.library_display__games {
-    grid-column: 1/2;
-    border: 1px solid blue
-}
 
 .library_link__active {
     font-weight: bold;
+}
+
+.app_library_game__container {
+    grid-column: 2;
+    border: solid 1px red;
+}
+
+
+.PlayItem__container {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid green;
+    margin: 5px;
+}
+
+.PlayItem__container img {
+    height: auto;
+    max-width: 200px
+}
+
+.PlayItem__name_studio {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.PlayItem__name {
+    font-weight: bold;
+}
+
+.PlayItem__name:hover {
+    text-decoration: underline;
+}
+
+.PlayItem__studio {
+    padding-top: 10px;
+}
+
+.GameInfo__container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+    margin: 5px;
+}
+
+.GameInfo__prop {
+    margin: 5px;
+}
+
+.GameInfo__select_div {
+    margin: 10px;
+}
+
+.GameInfo__select_div label {
+    color: whitesmoke;
+    padding-right: 15px;
+}
+
+.GameInfo__container img {
+    max-width: 300px;
+    height: auto
 }

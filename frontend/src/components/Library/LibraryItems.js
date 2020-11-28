@@ -1,29 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom'
+import LibraryList from './LibraryList'
 
-import * as libraryActions from '../../store/library'
 
 
-const LibraryItems = ({library}) => {
-    const userId = useSelector(state => state.session.user.id);
-    const dispatch = useDispatch()
+const LibraryItems = ({library, setLibrary}) => {
     
-    
-
-    const [activeLibrary, setLibrary] = useState([])
-    useEffect(()=> {
-        console.log('active library', activeLibrary)
-        dispatch(libraryActions.loadSelectedLibrary(activeLibrary, userId))
-    }, [activeLibrary])
-
+    console.log(setLibrary)
 
     return (
         <div>
-        <NavLink to='/library' 
+        <NavLink to='/library'
+            key={library.id} 
             className='library_link'
             onClick={() => setLibrary(library.id)} 
-            onclick={()=> console.log(activeLibrary)}
             id={library.id}>
                 {library.name}
         </NavLink>
