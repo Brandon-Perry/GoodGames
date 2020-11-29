@@ -3,8 +3,9 @@ const sessionRouter = require("./session.js");
 const usersRouter = require("./users.js");
 const wantedGamesRouter = require('./wantToPlay.js');
 const librariesRouter = require('./libraries.js');
-const playedRouter = require('./played.js')
-const playingRouter = require('./playing')
+const playedRouter = require('./played.js');
+const playingRouter = require('./playing.js');
+const updateGameRouter = require('./updateGame.js')
 
 
 // // GET /api/set-token-cookie
@@ -55,6 +56,8 @@ router.use('/users',playedRouter);
 
 router.use('/users',playingRouter);
 
-router.use('/users', librariesRouter)
+router.use('/users', librariesRouter);
+
+router.use('/users', updateGameRouter)
 
 module.exports = router;

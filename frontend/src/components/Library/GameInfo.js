@@ -3,22 +3,60 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import '../AppPage/AppPage.css'
 
+import * as libraryActions from '../../store/library'
+
 
 const GameInfo = ({selectedGame}) => {
-
-    const UpdateGameStatus = () => {
-
-    }
-
+    const dispatch = useDispatch()
+    const current_library_games = useSelector(state => state.library.current_library_games);
     if (!selectedGame) {
         return (
             <>
             </>
         )
     }
-
     const game = selectedGame
     const imgsrc = `https://steamcdn-a.akamaihd.net/steam/apps/${game.steam_id}/logo.png`
+
+    const UpdateGameStatus = (e) => {
+        e.stopPropagation();
+        // console.log(e.target.value);
+        // console.log('update game status fires')
+        let new_status = e.target.value;
+
+
+        if (new_status === 'played') {
+            game.played = true;
+            game.playing = false;
+            game.wantToPlay = false
+        } else if (new_status === 'playing') {
+            game.played = false;
+            game.playing = true;
+            game.wantToPlay = false;
+        } else if (new_status === 'wantToPlay') {
+            game.played = false;
+            game.playing = false;
+            game.wantToPlay = true;
+        } else {
+            throw new Error()
+        }
+
+        let index;
+        for (let i = 0; i < current_library_games.length; i++) {
+            if (game.game_id === current_library_games[i].game_id) {
+                index = i;
+                break
+            }
+        }
+        // console.log(index)
+        // console.log(game)
+        // console.log('about to fire library action')
+        dispatch(libraryActions.updateLibraryGamePlayStatus(index,game))
+        
+
+    }
+
+
 
     return (
         
@@ -52,7 +90,7 @@ const GameInfo = ({selectedGame}) => {
                 <select 
                     id='game_status' 
                     name='gamestatus'
-                    onChange={()=> UpdateGameStatus()}>
+                    onChange={(e)=> UpdateGameStatus(e)}>
                     
                     {game.wantToPlay ? 
                         <option value='wantToPlay' selected>
