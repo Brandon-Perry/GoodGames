@@ -7,6 +7,7 @@ import WantToPlayItems from './WantToPlayItems'
 
 const AppPageWantToPlay = () => {
     const userId = useSelector(state => state.session.user.id);
+    const games = useSelector(state => state.library.current_library_games);
     const [wantedGames, setWantedGames] = useState([])
     useEffect(() => {
         (async() => {
@@ -18,7 +19,7 @@ const AppPageWantToPlay = () => {
             }
             
         })()
-    },[])
+    },[games])
     return (
         <>
             <h2>Want To Play</h2>

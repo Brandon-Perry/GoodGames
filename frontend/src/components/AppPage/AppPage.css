@@ -54,7 +54,8 @@
 
 .PlayItem__container img {
     height: auto;
-    max-width: 200px
+    max-width: 200px;
+    margin: 10px;
 }
 
 .PlayItem__name_studio {

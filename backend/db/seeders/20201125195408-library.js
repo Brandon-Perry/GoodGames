@@ -5,20 +5,26 @@ module.exports = {
   
      await queryInterface.bulkInsert('Libraries', [
       {
+        name: 'Played',
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Want to Play',
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Playing',
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
         name: 'Favorites',
         user_id: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        name: 'Need better computer first',
-        user_id: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        name: 'omg too good',
-        user_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       }
