@@ -22,13 +22,13 @@ module.exports = {
     await queryInterface.bulkInsert('Games', appObjs, {});
 
 
-    for (let i = 0; i < 20; i++) {
+    // for (let i = 0; i < 20; i++) {
         
-      await queryInterface.bulkInsert('Games', [
-       {
-         name: apps[i].name, steam_id: apps[i].appid, createdAt: new Date(), updatedAt: new Date()
-       }], {});
-    }
+    //   await queryInterface.bulkInsert('Games', [
+    //    {
+    //      name: apps[i].name, steam_id: apps[i].appid, createdAt: new Date(), updatedAt: new Date()
+    //    }], {});
+    // }
      
     
   },

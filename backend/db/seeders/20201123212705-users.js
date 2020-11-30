@@ -1,7 +1,7 @@
 'use strict';
 // const SteamUserIds = require('../../user_ids');
 const fetch = require('node-fetch');
-const key = require('../../../api_key');
+// const key = require('../../../api_key');
 const faker = require('faker');
 const bycrypt = require('bcryptjs')
 
