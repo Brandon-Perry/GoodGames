@@ -1,22 +1,29 @@
 const fetch = require('node-fetch')
 const key =require('../api_key')
+const steamId = require('../backend/user_ids')
+// const steamId = BigInt(76561198083486927)
 
 
-const test = async () => {
+const test = async (steamId) => {
+    try {
+        console.log(steamId)
+        const res = await fetch(`https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=${key}&format=json&steamid=${steamId}`);
+        const data = await res.json();
+        console.log(data)
     
-    const res = await fetch(`http://localhost:8080/api/users/1/library_games/1`);
-    const data = await res.json();
-    // console.log(data)
+        const userData = data.response
+        
+        if (res.ok) {
+            return data
+        }
+    } catch(e) {
+        console.error(e)
+    }
 
-    // data = {...data.user_games, ...game_info}
-    
-    let newData = []
-    
-    data.user_games.forEach((el,i) => {
-        let newObj = {...data.user_games[i], ...data.game_info[i]}
-        newData.push(newObj)
-    })
-    console.log(newData)
+    // const userDataRes = await fetch(`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${key}&format=json&steamids=${steamId}`)
+    // const userDataJson = await userDataRes.json()
+    // console.log(userDataJson)
+    // return userDataJson
 }
 
-test()
+console.log(test(steamId[0]))
