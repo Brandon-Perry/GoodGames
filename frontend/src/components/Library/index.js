@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux'
 import LibraryList from './LibraryList'
 import GameList from './GameList';
 import GameInfo from './GameInfo'
-import '../AppPage/AppPage.css';
+import './library.css';
 
 
 
@@ -12,16 +12,16 @@ const Library = () => {
     const [selectedGame, setSelectedGame] = useState(null)
 
     return (
-        <div className='app_home__container'>
-            <div className='app_library__container'>
+        <div className='library__container'>
+            <div className='library_list__container'>
                 <LibraryList />
             </div>
-            <div className='app_library_game__container'>
+            <div className='library_game__container'>
                 <GameList 
                     setSelectedGame={setSelectedGame}
                 />
             </div>
-            <div className='app_library_gameinfo__container'>
+            <div className='library_gameinfo__container'>
                 <GameInfo
                     selectedGame={selectedGame}
                 />

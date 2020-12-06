@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import '../AppPage/AppPage.css'
+import './library.css'
 
 import * as libraryActions from '../../store/library'
 
@@ -60,32 +60,32 @@ const GameInfo = ({selectedGame}) => {
 
     return (
         
-        <div className='GameInfo__container'>
+        <div className='library_gameinfo__container'>
             <img src={imgsrc} />
 
-            <div className='GameInfo__prop'>
+            <div className='library_gameinfo__prop'>
                 <h2>{game.name}</h2>
             </div>
 
-            <div className='GameInfo__prop'>
+            <div className='library_gameinfo__prop'>
                 <p>{game.publisher ? 
                         game.publisher 
                         : 'No publisher information available'}</p>
             </div>
 
-            <div className='GameInfo__prop'>
+            <div className='library_gameinfo__prop'>
                 <p>{game.genre ? 
                         game.genre 
                         : 'No genre information available'}</p> 
             </div>
 
-            <div className='GameInfo__prop'>
+            <div className='library_gameinfo__prop'>
                 <p>{game.release_date ? 
                         game.release_date 
                         : 'No release date information available'}</p>
             </div>
 
-            <div className='GameInfo__select_div'>
+            <div className='library_gameinfo__select_div'>
                 <label>Update Game Status</label>
                 <select 
                     id='game_status' 

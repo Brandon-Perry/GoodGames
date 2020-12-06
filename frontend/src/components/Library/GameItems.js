@@ -11,16 +11,16 @@ const GameItems = ({game, setSelectedGame}) => {
 
     return (
         
-        <div className='PlayItem__container'>
+        <div className='library_playitem__container'>
             <img src={imgsrc} />
-            <div className='PlayItem__name_studio'>
+            <div className='library_playitem__name_studio'>
                 <p 
-                    className='PlayItem__name'
+                    className='library_playitem__name'
                     onClick={()=> setSelectedGame(game)}
                 >
                     {game.name}
                 </p>
-                <p className='PlayItem__studio'>By studio</p>
+                <p className='library_playitem__studio'>By studio</p>
             </div>
         </div>
     )
