@@ -1,7 +1,7 @@
 
 
 .splash_greeting__header {
-    color: whitesmoke;
+    color: #c7d5e0;
     font-size: 50px;
 }
 
@@ -10,4 +10,29 @@
     display: flex;
     justify-content: center;
     margin-top: 10%;
+}
+
+.splash_continue_new__container, .splash_demo__container {
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+/* .splash_demo__container {
+    margin-left:50%;
+    margin-right:50%;
+} */
+
+.splash_new_game, .splash_continue_game, .splash_demo_game {
+    font-size: 30px;
+    color: #66c0f4;
+    background-color: #2a475e;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.splash_new_game:hover, .splash_continue_game:hover, .splash_demo_game:hover {
+    color: #c7d5e0
 }
