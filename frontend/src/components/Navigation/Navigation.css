@@ -1,0 +1,33 @@
+
+.nav_bar__container {
+    background-color: #171a21;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    
+}
+.nav_bar__signlog {
+    display: flex;
+    position: absolute;
+    right: 50px;
+}
+
+.nav_bar__login, .nav_bar__signup {
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 1px solid black
+}
+
+.nav_bar__login {
+    background-color: blue;
+    margin-right: 10px;
+}
+
+.nav_bar__signup {
+    background-color: red;
+    margin-left: 10px;
+}

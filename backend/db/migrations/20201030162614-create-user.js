@@ -22,6 +22,10 @@ module.exports = {
         type: Sequelize.STRING.BINARY,
         allowNull: false,
       },
+      steam_id: {
+        type: Sequelize.BIGINT,
+        unique: true
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

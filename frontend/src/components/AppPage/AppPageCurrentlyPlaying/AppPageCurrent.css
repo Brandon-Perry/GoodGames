@@ -1,0 +1,30 @@
+.PlayItem__container {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid green;
+    margin: 5px;
+}
+
+.PlayItem__container img {
+    height: auto;
+    max-width: 200px
+}
+
+.PlayItem__name_studio {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.PlayItem__name {
+    font-weight: bold;
+}
+
+.PlayItem__name:hover {
+    text-decoration: underline;
+}
+
+.PlayItem__studio {
+    padding-top: 10px;
+}
